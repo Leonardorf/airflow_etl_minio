@@ -6,6 +6,18 @@ Este proyecto implementa un pipeline ETL utilizando Apache Airflow para orquesta
 
 ---
 
+## 📊 Fuente de datos
+
+Este proyecto utiliza un dataset de acceso público de la Ciudad Autónoma de Buenos Aires (CABA):
+
+- **Usuarios del sistema de bicicletas públicas EcoBici**  
+  Fuente: [datos abiertos CABA](https://data.buenosaires.gob.ar/dataset/bicicletas-publicas)  
+  CSV directo: [usuarios_ecobici_2024.csv](https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/bicicletas-publicas/usuarios_ecobici_2024.csv)
+
+🔎 **Uso sugerido**: análisis de patrones de uso por género, tipo de usuario (mensual / ocasional), comportamiento de movilidad sustentable, distribución temporal, etc.
+
+---
+
 ## 🔍 Objetivo
 
 Simular un entorno moderno de ingeniería de datos con herramientas de orquestación (Airflow), procesamiento distribuido (Spark) y almacenamiento tipo S3 (MinIO). Ideal para demostrar habilidades en proyectos ETL dentro de un portfolio de ciencia de datos.
