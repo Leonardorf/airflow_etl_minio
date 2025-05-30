@@ -102,11 +102,15 @@ El DAG `etl_minio_dag.py` define el siguiente flujo de trabajo:
 
 ---
 
+![Imagen de ejemplo](airflow.png)
+
 ## 📓 Análisis y visualización
 
 Podés explorar los datos procesados usando el notebook ubicado en `notebooks/exploracion.ipynb`, conectándote a MinIO o leyendo los archivos locales descargados.
 
 ---
+
+![Imagen de ejemplo](minio.png)
 
 ## 📂 .env.example
 
