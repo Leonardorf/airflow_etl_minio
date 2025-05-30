@@ -1,0 +1,26 @@
+[2025-05-30T18:04:26.342+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_ecobici.subir_minio manual__2025-05-30T14:23:09.742255+00:00 [queued]>
+[2025-05-30T18:04:26.366+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_ecobici.subir_minio manual__2025-05-30T14:23:09.742255+00:00 [queued]>
+[2025-05-30T18:04:26.366+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 2
+[2025-05-30T18:04:26.415+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): subir_minio> on 2025-05-30 14:23:09.742255+00:00
+[2025-05-30T18:04:26.419+0000] {standard_task_runner.py:60} INFO - Started process 438 to run task
+[2025-05-30T18:04:26.427+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'etl_ecobici', 'subir_minio', 'manual__2025-05-30T14:23:09.742255+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/etl_ecobici.py', '--cfg-path', '/tmp/tmpwt6de76a']
+[2025-05-30T18:04:26.429+0000] {standard_task_runner.py:88} INFO - Job 40: Subtask subir_minio
+[2025-05-30T18:04:26.538+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_ecobici.subir_minio manual__2025-05-30T14:23:09.742255+00:00 [running]> on host ff526de6184a
+[2025-05-30T18:04:26.677+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_ecobici' AIRFLOW_CTX_TASK_ID='subir_minio' AIRFLOW_CTX_EXECUTION_DATE='2025-05-30T14:23:09.742255+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-30T14:23:09.742255+00:00'
+[2025-05-30T18:04:26.745+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl_ecobici.py", line 26, in subir_a_minio
+    subprocess.run(["python", "dags/scripts/subir_minio.py"], check=True)
+  File "/usr/local/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['python', 'dags/scripts/subir_minio.py']' returned non-zero exit status 1.
+[2025-05-30T18:04:26.756+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=etl_ecobici, task_id=subir_minio, execution_date=20250530T142309, start_date=20250530T180426, end_date=20250530T180426
+[2025-05-30T18:04:26.789+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 40 for task subir_minio (Command '['python', 'dags/scripts/subir_minio.py']' returned non-zero exit status 1.; 438)
+[2025-05-30T18:04:26.799+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-05-30T18:04:26.827+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

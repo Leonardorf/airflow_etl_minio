@@ -1,0 +1,16 @@
+FROM bitnami/spark:3.5.0
+
+USER root
+
+# Instalar librerías necesarias para PySpark con S3
+RUN install_packages curl unzip openjdk-17-jdk python3-pip
+
+# Agregar Hadoop-AWS y SDK
+RUN mkdir -p /opt/spark/jars && \
+    curl -o /opt/spark/jars/hadoop-aws-3.3.6.jar https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.6/hadoop-aws-3.3.6.jar && \
+    curl -o /opt/spark/jars/aws-java-sdk-bundle-1.12.536.jar https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.536/aws-java-sdk-bundle-1.12.536.jar
+
+# Instalar Python libs si querés usarlas (opcional)
+RUN pip3 install boto3 pandas
+
+WORKDIR /app

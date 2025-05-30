@@ -1,0 +1,13 @@
+[2025-05-30T13:47:31.037+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_ecobici.descargar_csv manual__2025-05-30T13:47:25.452795+00:00 [queued]>
+[2025-05-30T13:47:31.055+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_ecobici.descargar_csv manual__2025-05-30T13:47:25.452795+00:00 [queued]>
+[2025-05-30T13:47:31.055+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-05-30T13:47:31.101+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): descargar_csv> on 2025-05-30 13:47:25.452795+00:00
+[2025-05-30T13:47:31.105+0000] {standard_task_runner.py:60} INFO - Started process 82 to run task
+[2025-05-30T13:47:31.110+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'etl_ecobici', 'descargar_csv', 'manual__2025-05-30T13:47:25.452795+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/etl_ecobici.py', '--cfg-path', '/tmp/tmpp2g7cl7q']
+[2025-05-30T13:47:31.115+0000] {standard_task_runner.py:88} INFO - Job 32: Subtask descargar_csv
+[2025-05-30T13:47:31.238+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_ecobici.descargar_csv manual__2025-05-30T13:47:25.452795+00:00 [running]> on host ff526de6184a
+[2025-05-30T13:47:31.535+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='etl_ecobici' AIRFLOW_CTX_TASK_ID='descargar_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-05-30T13:47:25.452795+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-30T13:47:25.452795+00:00'
+[2025-05-30T13:47:36.037+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-05-30T13:47:36.053+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_ecobici, task_id=descargar_csv, execution_date=20250530T134725, start_date=20250530T134731, end_date=20250530T134736
+[2025-05-30T13:47:36.115+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-30T13:47:36.166+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
